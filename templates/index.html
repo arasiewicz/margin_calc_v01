@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+</head>
+<body>
+    <h1>Margin Calculator</h1>
+    <form method="post">
+        <label for="cost_price">Stawka kosztowa:</label>
+        <input type="number" name="cost_price" id="cost_price" step="0.01"><br>
+
+        <label for="selling_price">Stawka sprzedażowa PLN:</label>
+        <input type="number" name="selling_price" id="selling_price" step="0.01"><br>
+
+        <label for="margin_percent">Marża w %:</label>
+        <input type="number" name="margin_percent" id="margin_percent" step="0.01"><br>
+
+        <label for="profit">Profit:</label>
+        <input type="number" name="profit" id="profit" step="0.01"><br>
+
+        <button type="submit">Oblicz</button>
+    </form>
+
+    {% if margin_percent is not none and selling_price is not none and profit is not none %}
+    <h2>Result:</h2>
+    <p>Margin %: {{ margin_percent }}</p>
+    <p>Selling Price: {{ selling_price }}</p>
+    <p>Profit: {{ profit }}</p>
+    {% endif %}
+</body>
+</html>
